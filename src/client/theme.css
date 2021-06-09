@@ -1,0 +1,16 @@
+window {
+    background-color: #DDDDDD;
+}
+
+box#loginBox {
+    background: #000000;
+}
+
+entry {
+    font: 16 px;
+}
+
+entry#text_entry {
+    background-color: #555555;
+}
+
