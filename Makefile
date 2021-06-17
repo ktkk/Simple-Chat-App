@@ -14,7 +14,6 @@ SERVER_OBJS = $(SERVER_SRCS:%.c=$(OUT_DIR)/%.o)
 
 all: client server
 
-
 client: $(CLIENT_OBJS)
 	# build client from client objects
 	$(CC) $< -o out/$@ `pkg-config --cflags gtk+-3.0` `pkg-config --libs gtk+-3.0`
