@@ -16,7 +16,7 @@ all: client server
 
 client: $(CLIENT_OBJS)
 	# build client from client objects
-	$(CC) $< -o out/$@ `pkg-config --cflags gtk+-3.0` `pkg-config --libs gtk+-3.0`
+	$(CC) $< -o out/$@
 
 server: $(SERVER_OBJS)
 	# build server from server objects
@@ -26,7 +26,7 @@ $(CLIENT_OBJS): $(CLIENT_SRCS)
 	# create out directory
 	mkdir -p $(dir $@)
 	# build the client object files
-	$(CC) -c $< -o $@
+	$(CC) -c $< -o $@ `pkg-config --cflags gtk+-3.0` `pkg-config --libs gtk+-3.0`
 
 $(SERVER_OBJS): $(SERVER_SRCS)
 	# create out directory
@@ -35,4 +35,4 @@ $(SERVER_OBJS): $(SERVER_SRCS)
 	$(CC) -c $< -o $@
 
 .PHONY: clean
-	rm -rf $(OUT_DIR)
+	.rm -rf $(OUT_DIR)
